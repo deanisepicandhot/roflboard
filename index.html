@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ROFL BOARD</title>
+    <style>
+      button {
+        font-size: 24px;
+        padding: 16px 24px;
+        background: linear-gradient(45deg, #4a1400, #4a1400, #4a1400, #4a1400, #4a1400, #4a1400, #4a1400);
+        background-size: 400%;
+        color: white;
+        border: 2px black;
+        transition: background-position 0.5s ease-in-out;
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        margin-right: 10px; /* add margin */
+        margin-bottom: 10px;
+      }
+
+      button:last-child {
+        margin-right: 0; /* remove margin for the last button */
+      }
+
+      button:hover {
+        background-position: 100%;
+      }
+
+      body {
+        background-color: cyan;
+        color: blue;
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+      }
+
+      h1 {
+        color: white;
+      }
+
+      #stop-all-sounds {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        font-size: 16px;
+        padding: 8px 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ROFL BOARD</h1>
+    <button onclick="playSound('airhorn.mp3')">MLG Airhorn</button>
+    <button onclick="playSound('vineboom.mp3')">Vine Boom</button>
+    <button onclick="playSound('tacobell.mp3')">Taco Bell</button>
+    <button onclick="playSound('mrbeast.mp3')">Mr.Beast</button>
+    <button onclick="playSound('waterphone.mp3')">Waterphone</button>
+    <button onclick="playSound('outrosound.mp3')">Outro Sound</button>
+    <button onclick="playSound('bkad.mp3')">BK Ad Earrape</button>
+    <button onclick="playSound('hogrida.mp3')">HOG RIDER</button>
+    <button onclick="playSound('nfl.mp3')">NFL SOUND</button>
+    <button onclick="playSound('bingchilling.mp3')">Bing Chilling</button>
+    <button onclick="playSound('androidearrape.mp3')">Android Earrape</button>
+    <button onclick="playSound('noorearrape.mp3')">Open The Noor Earrape</button>
+    <button onclick="playSound('animan.mp3')">animan studios</button>
+     <button onclick="playSound('ea.mp3')">EA SPORTS</button>
+    <button onclick="playSound('car.mp3')">Car horn</button>
+    <button onclick="playSound('haha.mp3')">goofy laugh</button>
+    <button onclick="playSound('nut.mp3')">nutella</button>
+    <button onclick="playSound('max.mp3')">play at max volume</button>
+    <button onclick="playSound('Soda.mp3')">SODA!</button>
+    <button onclick="playSound('ob.mp3')">obamna</button>
+    <button onclick="playSound('bird.mp3')">im da biggest bird</button>
+    <button onclick="playSound('bks.mp3')">BK ad cursed</button>
+    <button id="stop-all-sounds" onclick="stopAllSounds()">Stop All Sounds</button>
+  
+
+    <script>
+      var currentSounds = [];
+
+      function playSound(soundFile) {
+        var audio = new Audio(soundFile);
+        audio.play();
+        currentSounds.push(audio);
+      }
+
+      function stopAllSounds() {
+        for (var i = 0; i < currentSounds.length; i++) {
+          currentSounds[i].pause();
+          currentSounds[i].currentTime = 0;
+        }
+        currentSounds = [];
+      }
+    </script>
+  </body>
+</html>
